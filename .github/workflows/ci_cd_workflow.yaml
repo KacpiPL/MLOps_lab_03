@@ -41,7 +41,7 @@ jobs:
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
       - name: Install deployment dependencies
-        run: uv pip install -r requirements-deploy.txt
+        run: uv sync --group deployment
 
       - name: Download model artifacts
         run: python src/scripts/main.py --script download
